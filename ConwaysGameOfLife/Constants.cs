@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConwaysGameOfLife
 {
     public class Constants
     {
         public const short SCREEN_WIDTH = 200;
-        public const short SCREEN_HEIGHT = 40;
+        public const short SCREEN_HEIGHT = 80;
         public const short WORLD_WIDTH = 200;
         public const short WORLD_HEIGHT = 80;
         public const short INIT_POPULATION_PERCENTAGE = 35;

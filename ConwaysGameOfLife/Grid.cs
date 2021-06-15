@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConwaysGameOfLife
 {
@@ -52,13 +50,15 @@ namespace ConwaysGameOfLife
         }
         public void Update()
         {
-            for (int y = 0; y < Height; y++)
+            
+            for(int y = 0; y < Height; y++)
             {
                 for (int x = 0; x < Width; x++)
                 {
                     Cells[x, y].Update();
                 }
             }
+            
         }
 
         public void ForwardOneGeneration()

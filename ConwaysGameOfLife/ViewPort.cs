@@ -1,11 +1,7 @@
 ﻿using Microsoft.Win32.SafeHandles;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Drawing;
 
 namespace ConwaysGameOfLife
 {
@@ -44,8 +40,8 @@ namespace ConwaysGameOfLife
         #region methods
         public void Init()
         {
-            Console.SetWindowSize(Width, Height);
-            Console.SetBufferSize(Width, Height);
+            Console.SetWindowSize(Width, Height/2);
+            Console.SetBufferSize(Width, Height/2);
             Console.CursorVisible = false;
 
             // Console window manipulation (prevent resize and close)
@@ -66,9 +62,9 @@ namespace ConwaysGameOfLife
             // Convert cells inside viewport to char array.
 
             int i = 0;
-            for (int y = 0; y < Constants.WORLD_HEIGHT - 1; y += 2)
+            for (int y = 0; y < Constants.SCREEN_HEIGHT - 1; y += 2)
             {
-                for (int x = 0; x < Constants.WORLD_WIDTH; x += 1)
+                for (int x = 0; x < Constants.SCREEN_WIDTH; x += 1)
                 {
                     char charValue = Constants.BACKGROUND_CHAR;
                     short topCell = grid.Cells[x, y].IsAliveGen[0];
