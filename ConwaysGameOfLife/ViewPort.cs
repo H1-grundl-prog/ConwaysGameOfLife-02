@@ -70,16 +70,17 @@ namespace ConwaysGameOfLife
             {
                 for (int x = 0; x < Constants.WORLD_WIDTH; x += 1)
                 {
-                    char charValue = (char)32;
+                    char charValue = Constants.BACKGROUND_CHAR;
                     short topCell = grid.Cells[x, y].IsAliveGen[0];
-                    short btmCell = grid.Cells[x, y+1].IsAliveGen[1];
+                    short btmCell = grid.Cells[x, y+1].IsAliveGen[0];
 
-                    if ( topCell == 1 &&  btmCell == 1) { charValue = Constants.TOP_AND_BOTTOM; }
-                    if ( topCell == 1 && btmCell != 1) { charValue = Constants.TOP; }
-                    if ( topCell != 1 && btmCell == 1) { charValue = Constants.BOTTOM; }
+                    if ( topCell == 1 &&  btmCell == 1) { charValue = Constants.TOP_AND_BOTTOM_CHAR; }
+                    if ( topCell == 1 && btmCell != 1) { charValue = Constants.TOP_CHAR; }
+                    if ( topCell != 1 && btmCell == 1) { charValue = Constants.BOTTOM_CHAR; }
 
                     buf[i].Attributes = Constants.FOREGROUND_COLOR | (Constants.BACKGROUND_COLOR << 4);
-                    buf[i].Char.AsciiChar = (byte)charValue;
+                    //buf[i].Char.AsciiChar = (byte)charValue;
+                    buf[i].Char = charValue;
                     i++;
                 }
             }

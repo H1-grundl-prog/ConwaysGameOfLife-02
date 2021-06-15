@@ -20,6 +20,7 @@ namespace ConwaysGameOfLife
             IsAliveGen[0] = 0;
             IsAliveGen[1] = 0;
             NeighbourCells = new List<short[]>();
+            NeighbourCells.Clear();
         }
         #endregion
 

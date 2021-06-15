@@ -99,7 +99,7 @@ namespace ConwaysGameOfLife
                     int nx = x + ix;
                     int ny = y + iy;
 
-                    // Pac-Man style / toroidial world layout
+                    // Pac-man / toroidial world layout
                     if (nx > Width - 1) { nx = 0; };
                     if (nx < 0) { nx = Width - 1; };
                     if (ny > Height - 1) { ny = 0; };
